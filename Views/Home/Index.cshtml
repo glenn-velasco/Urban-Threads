@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model IEnumerable<eCommerce_BiliBits.Models.Product>
+
+<div class="container my-4">
+    <h4 class="mb-3">Product Catalog</h4>
+    <div class="mb-3">
+        <a href="@Url.Action("AddProduct", "Home")" class="btn btn-success">Add Product</a>
+    </div>
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-3">
+        @foreach (var product in Model)
+        {
+            <div class="col">
+                <a href="@Url.Action("Details", "Home", new { id = product.Id })" class="text-decoration-none text-dark">
+                    <div class="card border rounded-3 shadow-sm h-10" style="font-size: 0.85rem;">
+                        <img src="@product.ImageUrl" class="card-img-top" style="height: 200px; object-fit: cover;" alt="@product.Name" />
+                        <div class="card-body p-2">
+                            <div class="fw-normal text-dark text-truncate" style="height: 38px; overflow: hidden;">@product.Name</div>
+                            <div class="text-dark text-truncate text-muted">@product.Description</div>
+                            <div class="text-danger fw-bold mt-1" style="font-size: 1rem;">@product.Price.ToString("C")</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
