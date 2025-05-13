@@ -19,7 +19,7 @@ This project is an e-commerce platform where users can view products, leave revi
 ---
 
 ## Prerequisites:
-- [.NET 9 or higher](https://dotnet.microsoft.com/download)
+- [.NET 8 or higher](https://dotnet.microsoft.com/download)
 - [SQL Server] (VS Built In MSSQL Server)
 - [Visual Studio 2022 or VS Code](https://code.visualstudio.com/)
 - [Entity Framework Core](https://docs.microsoft.com/en-us/ef/core/)
